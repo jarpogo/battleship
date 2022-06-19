@@ -22,9 +22,16 @@ class Ship():
         self.y = y
         self.orientation = orientation
         self.hp = hp
+        self.alive = True
 
     def get_hp(self):
         return self.hp
+
+    def hit(self):
+        self.hp -= 1
+
+    def is_alive(self):
+        return self.alive
 
 
 class Carrier(Ship):
