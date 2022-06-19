@@ -15,13 +15,16 @@ class Board():
             print([chr(alpha_chr)] + row)
             alpha_chr += 1
 
-    def update_tile(self, x: int, y: int, hit: bool):
+    def checked_tile(self, x: int, y: int):
 
         current_state = self.board[x][y]
 
         if current_state != ' ':
-            print("This location has already been targeted")
-            return
+            return True
+
+        return False
+
+    def update_tile(self, x: int, y: int, hit: bool):
 
         if hit:
             self.board[x][y] = 'X'
